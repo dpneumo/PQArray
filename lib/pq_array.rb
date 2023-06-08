@@ -1,7 +1,7 @@
 # This is an array based queue.
 # # Items in the queue can be required to be unique
 # insert: O(log(queue size)), find_highest: O(1), pull_highest: O(1)
-class PriorityQueueArray
+class PQArray
   attr_reader :queue
 
   def initialize

@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 require_relative 'test_helper'
-require_relative '../lib/priority_queue_array'
+require_relative '../lib/pq_array'
 require_relative '../lib/item'
 
-class PriorityQueueArray1Test < Minitest::Test
+class PQArray1Test < Minitest::Test
   def setup
-    @pq = PriorityQueueArray.new
+    @pq = PQArray.new
     @pq.insert(Item.new(label: 'b', priority: 2))
     @pq.insert(Item.new(label: 'x', priority: 6))
     @pq.insert(Item.new(label: 'y', priority: 6))
@@ -37,7 +37,7 @@ class PriorityQueueArray1Test < Minitest::Test
   end
 
   def test_find_highest_returns_nil_for_empty_queue
-    pq = PriorityQueueArray.new
+    pq = PQArray.new
     assert_nil pq.find_highest
   end
 
@@ -48,7 +48,7 @@ class PriorityQueueArray1Test < Minitest::Test
   end
 
   def test_identifies_empty_queue
-    pq = PriorityQueueArray.new
+    pq = PQArray.new
     assert pq.empty?
     pq.insert(Item.new(label:'T', priority: 5))
     refute pq.empty?
@@ -89,7 +89,7 @@ class PriorityQueueArray1Test < Minitest::Test
   end
 
   def test_find_lowest_returns_nil_for_empty_queue
-    pq = PriorityQueueArray.new
+    pq = PQArray.new
     assert_nil pq.find_lowest
   end
 
